@@ -1,0 +1,4 @@
+*.sqlite
+*.csv
+downloads/
+figures/test.png
