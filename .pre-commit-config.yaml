@@ -1,20 +1,12 @@
 # See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
-    hooks:  # Which checks to enable from this repo
-      - id: trailing-whitespace
-        # Removes extra spaces at end of lines
-      - id: end-of-file-fixer
-        # Ensures files end with newline (required by some tools)
-      - id: check-added-large-files
-        # Blocks commits with files > 5MB (prevents huge files in git)
-      - id: detect-private-key
-        # Scans for passwords/API keys (security check)
--   repo: https://github.com/psf/black
-    # Black = Python code formatter (makes code look consistent)
-    rev: 23.3.0
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
     hooks:
-      - id: black
-        # Auto-formats Python code (spacing, quotes, etc.)
+      - id: flake8
+        # Lints Python code (style and error checking)
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.5.1
+    hooks:
+      - id: mypy
+        # Type checking for Python
